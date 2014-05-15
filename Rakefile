@@ -398,3 +398,9 @@ namespace :caja do
     PrototypeHelper.require_caja_builder
   end
 end
+
+desc "Run server with test files"
+task :run do 
+  require "#{Dir.pwd}/vendor/testing/server.rb"
+  MyApp.run!
+end
