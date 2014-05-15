@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>PrototypeJS tests</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="bootstrap.min.css">
+  
+  
+  <style type="text/css">
+    .list-group-item {
+      padding: 3px; 
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header">
+    <h1>PrototypeJS tests</h1>
+  </div>
+  
+  <div class="row"> 
+
+    <div class="alert alert-info">
+      Browsers: <ul>
+      <% @browsers.each do |b| %>
+        <li><%= b.first%>: <i><%=b.last %></i></li>
+      <% end %>
+      </ul>
+      <br/>
+      <span>Platform: <i><%=  RUBY_PLATFORM %></i></span>
+      <br/>
+      <span>Current browser: <i><%= request.user_agent %></i></span>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="col-md-12">
+      <ul class="list-group" id="links">
+        <% @files.each do |file| %>
+          <li class="list-group-item"><a target="_blank" href='/test/<%= file.url %>'><%= file.name %></a></li>
+        <% end %> 
+      </ul>
+    </div>
+  </div>  
+  
+
+</div>
+
+</body>
+</html>
